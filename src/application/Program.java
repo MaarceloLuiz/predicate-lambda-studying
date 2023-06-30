@@ -21,8 +21,10 @@ public class Program {
 		list.removeIf(p -> p.getPrice() >= 100);
 		*/
 		
-		//podemos também utilizar a Interface 'Predicate' que implementamos manualmente
-		list.removeIf(new ProductPredicate());
+		//Method Reference:
+		
+		//ClassName :: MethodName
+		list.removeIf(Product :: staticProductPredicate);
 		
 		for (Product p : list) {
 			System.out.println(p);
