@@ -25,14 +25,10 @@ public class Program {
 		list.removeIf(Product :: nonStaticProductPredicate);
 		*/
 		
-		//Declared Lambda Expression
+		//Inline Lambda Expression
 		// we can also use a parameterized value (could also be an user input) in a var while declaring the lambda expression:
 		double min = 100;
-		Predicate<Product> pred = p -> p.getPrice() >= min;
-		
-		//Predicate<Product> pred = p -> p.getPrice() >= 100;
-		
-		list.removeIf(pred);
+		list.removeIf(p -> p.getPrice() >= min);
 		
 		for (Product p : list) {
 			System.out.println(p);
